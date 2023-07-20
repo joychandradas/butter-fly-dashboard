@@ -158,6 +158,36 @@ welcome-back end
 *****************/
 
 /************************
+income section start 
+************************/
+.main-income {
+  margin-top: 40px;
+  padding: 2rem;
+}
+
+.goal-section{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.goal-div{
+  padding-bottom: 5px;
+  background-color: white;
+  border-bottom: 2px solid #3944f7;
+}
+
+.goal-div h2{
+  font-weight: 700;
+}
+
+/************************
+income section end 
+************************/
+
+/************************
 Strategy section start 
 ************************/
 .main-strategy {
