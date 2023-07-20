@@ -5,7 +5,7 @@
   padding: 0;
   border: none;
   outline: none;
-  font-family: "Merriweather", serif;
+  font-family: "Merriweather", serif, sans-serif;
   font-weight: 400;
   box-sizing: border-box;
 }
@@ -26,7 +26,7 @@ hr {
 }
 
 .sidebar {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
@@ -37,7 +37,12 @@ hr {
   color: #cecece;
   transition: all 0.5s linear;
 }
+
+main {
+  margin-left: 90px;
+}
 .sidebar:hover {
+  background-color: #fff;
   width: 240px;
   transition: 0.5s;
 }
@@ -58,17 +63,21 @@ hr {
   padding: 1rem;
   margin: 8px 0;
   border-radius: 8px;
-  transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover a,
+.menu li.active a {
+  color: white;
 }
 
 .menu li:hover,
-.active {
+.menu li.active {
   background-color: #3944f7;
 }
 
 .menu a {
   text-decoration: none;
-  color: rgba(142, 142, 142, 0.678);
+  color: #000;
   font-size: 14px;
   display: flex;
   align-items: center;
@@ -122,6 +131,7 @@ welcome-back start
 }
 
 .mike-img {
+  border-radius: 50%;
   width: 30%;
   height: 30%;
 }
@@ -165,7 +175,7 @@ income section start
   padding: 2rem;
 }
 
-.goal-section{
+.goal-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
@@ -173,14 +183,123 @@ income section start
   margin-top: 25px;
 }
 
-.goal-div{
+.goal-div {
   padding-bottom: 5px;
   background-color: white;
   border-bottom: 2px solid #3944f7;
 }
 
-.goal-div h2{
+.goal-div h2 {
   font-weight: 700;
+}
+
+.overtime {
+  margin-top: 30px;
+}
+
+.overtime h4 {
+  font-weight: 900;
+}
+
+/* chart js start */
+.chartBox {
+  width: 500px;
+  height: 200px;
+  margin-top: 20px;
+}
+/* chart js end */
+
+.compare-section {
+  margin-top: 30px;
+}
+
+.compare-section h4 {
+  font-weight: 900;
+}
+
+.main-compare-data {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.compare-data {
+  margin-top: 20px;
+}
+
+.compare-data h5{
+  margin-top: 5px;
+}
+
+/* circle progress bar */
+.circle-progress{
+  margin-top: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.circle-wrap {
+  margin: 150px auto;
+  width: 120px;
+  height: 120px;
+  background: #fefcff;
+  border-radius: 50%;
+  border: 1px solid #cdcbd0;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+  width: 119px;
+  height: 119px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0px, 140px, 140px, 75px);
+}
+
+.circle-wrap .inside-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 80px;
+  text-align: center;
+  margin-top: 14px;
+  margin-left: 14px;
+  color: #000;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 1em;
+}
+
+/* color animation */
+
+/* 3rd progress bar */
+.mask .fill {
+  clip: rect(0px, 75px, 150px, 0px);
+  background-color: #50DBB4;
+}
+
+.mask.full,
+.circle .fill {
+  animation: fill ease-in-out 3s;
+  transform: rotate(135deg);
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(135deg);
+  }
 }
 
 /************************

@@ -68,7 +68,7 @@
         <!-- div 1 -->
         <div class="welcome-back">
           <div class="mike-info">
-            <img class="mike-img" src="images/joy.png" alt="" />
+            <img class="mike-img" src="images/joy.jpg" alt="" />
             <div>
               <h2 style="font-weight: 700">Hi Mike,</h2>
               <p style="color: rgb(112, 112, 112)">welcome back.</p>
@@ -139,6 +139,79 @@
             <div class="goal-div">
               <h2>$300</h2>
               <p>Est. Monthly Income</p>
+            </div>
+          </div>
+          <div class="overtime">
+            <h4>Contributions Overtime</h4>
+            <!-- chart start -->
+            <div class="chartBox">
+              <canvas id="myChart"></canvas>
+            </div>
+            <!-- chart end -->
+          </div>
+          <div class="compare-section">
+            <h4>How do I compare to my peers?</h4>
+            <p>Those numbers represent current goal achievement</p>
+            <div class="main-compare-data">
+              <div class="compare-data">
+                <h5>
+                  Age: Under 30
+                  <span style="margin-left: 8px"
+                    ><i class="fa-solid fa-caret-down"></i
+                  ></span>
+                </h5>
+                <hr />
+                <h5>
+                  Salary: K 20 - K 30
+                  <span style="margin-left: 8px"
+                    ><i class="fa-solid fa-caret-down"></i
+                  ></span>
+                </h5>
+                <hr />
+                <h5>
+                  Gender: Male
+                  <span style="margin-left: 8px"
+                    ><i class="fa-solid fa-caret-down"></i
+                  ></span>
+                </h5>
+                <hr />
+              </div>
+              <!-- circle progress bar -->
+              <div class="circle-progress">
+                <div class="circle-wrap">
+                  <div class="circle">
+                    <div class="mask full">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="mask half">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="inside-circle">78%</div>
+                  </div>
+                </div>
+                <div class="circle-wrap">
+                  <div class="circle">
+                    <div class="mask full">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="mask half">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="inside-circle">95%</div>
+                  </div>
+                </div>
+                <div class="circle-wrap">
+                  <div class="circle">
+                    <div class="mask full">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="mask half">
+                      <div class="fill"></div>
+                    </div>
+                    <div class="inside-circle">59%</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -235,5 +308,11 @@
       src="https://kit.fontawesome.com/0e3b707d31.js"
       crossorigin="anonymous"
     ></script>
+    <!-- chartjs -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"
+    ></script>
+    <script src="index.js"></script>
   </body>
 </html>
