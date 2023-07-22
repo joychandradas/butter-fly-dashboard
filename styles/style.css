@@ -218,88 +218,61 @@ income section start
 }
 
 .main-compare-data {
+  margin-top: 20px;
   display: flex;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 50px;
   align-items: center;
 }
 
 .compare-data {
-  margin-top: 20px;
 }
 
-.compare-data h5{
+.compare-data h5 {
   margin-top: 5px;
 }
 
 /* circle progress bar */
-.circle-progress{
-  margin-top: 20px;
-  height: 100px;
+.circle{
   display: flex;
-  justify-content: center;
+  gap: 20px;
   align-items: center;
-  gap: 30px;
+  justify-content: center;
 }
-
-.circle-wrap {
-  margin: 150px auto;
-  width: 120px;
-  height: 120px;
-  background: #fefcff;
+div[role="progressbar"] {
+  --size: 6rem;
+  --fg: #50dbb4;
+  --bg: #def;
+  --pgPercentage: var(--value);
+  animation: growProgressBar 3s 1 forwards;
+  width: var(--size);
+  height: var(--size);
   border-radius: 50%;
-  border: 1px solid #cdcbd0;
-}
-
-.circle-wrap .circle .mask,
-.circle-wrap .circle .fill {
-  width: 119px;
-  height: 119px;
-  position: absolute;
-  border-radius: 50%;
-}
-
-.circle-wrap .circle .mask {
-  clip: rect(0px, 140px, 140px, 75px);
-}
-
-.circle-wrap .inside-circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: #fff;
-  line-height: 80px;
-  text-align: center;
-  margin-top: 14px;
-  margin-left: 14px;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(
+      closest-side,
+      white 80%,
+      transparent 0 99.9%,
+      white 0
+    ),
+    conic-gradient(var(--fg) calc(var(--pgPercentage) * 1%), var(--bg) 0);
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: calc(var(--size) / 5);
   color: #000;
-  position: absolute;
-  z-index: 100;
-  font-weight: 700;
-  font-size: 1em;
 }
-
-/* color animation */
-
-/* 3rd progress bar */
-.mask .fill {
-  clip: rect(0px, 75px, 150px, 0px);
-  background-color: #50DBB4;
-}
-
-.mask.full,
-.circle .fill {
-  animation: fill ease-in-out 3s;
-  transform: rotate(135deg);
-}
-
-@keyframes fill {
-  0% {
-    transform: rotate(0deg);
+@keyframes growProgressBar {
+  0%,
+  33% {
+    --pgPercentage: 0;
   }
   100% {
-    transform: rotate(135deg);
+    --pgPercentage: var(--value);
   }
+}
+div[role="progressbar"]::before {
+  counter-reset: percentage var(--value);
+  content: counter(percentage) "%";
 }
 
 /************************
@@ -352,3 +325,31 @@ Strategy section start
 /*********************** 
 Strategy section end 
 ***********************/
+
+/**********************
+Responsive Start
+**********************/
+@media only screen and (max-width: 600px) {
+  
+  main {
+    margin: 0;
+  }
+
+  .main-div {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .main-compare-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+/**********************
+Responsive End
+**********************/

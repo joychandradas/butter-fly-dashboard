@@ -31,6 +31,15 @@ const config = {
 // render init block
 const myChart = new Chart(document.getElementById("myChart"), config);
 
-// Instantly assign Chart.js version
-const chartVersion = document.getElementById("chartVersion");
-chartVersion.innerText = Chart.version;
+// range sync
+const value = document.querySelector("#emp-cont-value");
+const input = document.querySelector("#emp-cont-inp");
+input.addEventListener("input", (event) => {
+  value.textContent = event.target.value+'%';
+});
+
+const value1 = document.querySelector("#retire-age-value");
+const input1 = document.querySelector("#retire-age-inp");
+input1.addEventListener("input", (event) => {
+  value1.textContent = event.target.value;
+});
