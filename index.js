@@ -1,20 +1,20 @@
-// setup
 const data = {
   labels: ["20", "25", "30", "35", "40", "45", "50", "55", "60", "65"],
   datasets: [
     {
-      label: "Weekly Sales",
-      data: [300, 200, 100, 50],
-      backgroundColor: [
-        "rgba(255, 26, 104, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)",
-        "rgba(0, 0, 0, 0.2)",
-      ],
-      borderWidth: 1,
+      label: "Employer",
+      data: ["20", "25", "30", "35", "40", "45", "50", "55", "60", "65"],
+      backgroundColor: ["#0014FF"],
+    },
+    {
+      label: "Employee",
+      data: ["20", "25", "30", "35", "40", "45", "50", "55", "60", "65"],
+      backgroundColor: ["#4E4FEB"],
+    },
+    {
+      label: "Total Interest",
+      data: ["20", "25", "30", "35", "40", "45", "50", "55", "60", "65"],
+      backgroundColor: ["#068FFF"],
     },
   ],
 };
@@ -24,7 +24,32 @@ const config = {
   type: "bar",
   data,
   options: {
-    responsive: true
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        stacked: true,
+        grid: {
+          display: false,
+        },
+      },
+      y: {
+        beginAtZero: true,
+        stacked: true,
+        grid: {
+          display: false,
+        },
+        min: 0,
+        max: 300,
+        ticks: {
+          stepSize: 100,
+        },
+      },
+    },
+    plugins: {
+      legend: {
+        display: false, // Set this to false to remove the legend from the chart
+      },
+    },
   },
 };
 
@@ -35,7 +60,7 @@ const myChart = new Chart(document.getElementById("myChart"), config);
 const value = document.querySelector("#emp-cont-value");
 const input = document.querySelector("#emp-cont-inp");
 input.addEventListener("input", (event) => {
-  value.textContent = event.target.value+'%';
+  value.textContent = event.target.value + "%";
 });
 
 const value1 = document.querySelector("#retire-age-value");
