@@ -93,7 +93,6 @@ main {
 }
 
 .menu a span {
-  display: none;
   overflow: hidden;
 }
 
@@ -181,9 +180,9 @@ income section start
 }
 
 .goal-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
   margin-top: 25px;
 }
@@ -365,6 +364,11 @@ Responsive Start
   main {
     margin-left: 0;
   }
+
+  .menu a span {
+    overflow: hidden;
+    display: none;
+  }
   .sidebar:hover {
     background-color: #fff;
     width: 90%;
@@ -443,6 +447,21 @@ Responsive Start
     width: 50%;
     padding: 10px;
   }
+
+  .starting-year{
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .goal-section1 {
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: 12fr 1fr 1fr; */
+    /* gap: 20px; */
+    align-items: center;
+    margin-top: 25px;
+  }
+
 }
 
 /**********************
